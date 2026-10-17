@@ -22,6 +22,7 @@ independent project, unaffiliated with OnePlus or OPPO.
 |---|---|---|---|
 | OnePlus Buds Pro | Verified on hardware | 541.541.510 | Light, Deep, Smart |
 | OnePlus Buds Pro 2 | Verified on hardware | 196.196.101 | Light, Medium, Deep, Smart |
+| OnePlus Buds 4 | Community tested on contributor hardware | 138.138.105 | Light, Medium, Deep, Smart; Adaptive mode |
 | Other compatible OnePlus/OPO devices | Experimental if recognised; no verified controls | Unknown | Not exposed |
 
 See [compatibility and limitations](docs/devices/compatibility.md). Gestures,
@@ -33,7 +34,8 @@ OnePlus Buds Pro and Buds Pro 2 are the only models currently hardware-verified
 by the maintainer. Other recognised OnePlus/OPO-compatible models are
 **Experimental** until tested. A model may become **Community Tested** after an
 owner reports successful, reproducible checks on their own hardware; that label
-does not mean maintainer hardware verification.
+does not mean maintainer hardware verification. OnePlus Buds 4 is Community
+Tested; see its [device record](docs/devices/oneplus-buds-4.md).
 
 Every connected device has a quiet reporting link at the bottom of the control
 panel. Verified and Community Tested devices show **Report a problem**;

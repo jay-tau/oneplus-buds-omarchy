@@ -2,6 +2,10 @@
 
 ## Unreleased — 0.1.0 release candidate
 
+- Add a Community Tested OnePlus Buds 4 profile: ANC mode and strengths
+  matching HeyMelody's commands, the new Adaptive parent mode, and Buds 4
+  factory EQ IDs (Serenade and Bass are swapped relative to the Pro 2).
+  Feature switches whose shared names are unconfirmed on a model stay unnamed.
 - Distinguish Verified, Community Tested and Experimental device evidence in the
   backend and panel; only Buds Pro and Buds Pro 2 remain hardware-verified.
 - Add a compact experimental-device notice and user-controlled compatibility

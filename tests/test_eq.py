@@ -110,6 +110,16 @@ class EqProfileTests(unittest.TestCase):
         self.assertEqual(profile.preset_for("pure-vocals").eq_id, 2)
         self.assertEqual(profile.preset_for("hans-zimmer-soundscape-tuning").eq_id, 7)
 
+    def test_buds_4_swaps_pro_2_bass_and_serenade_ids(self):
+        profile = PROFILES["065414"].eq
+        self.assertEqual(
+            [(item.eq_id, item.name) for item in profile.presets],
+            [(0, "Balanced"), (1, "Serenade"), (2, "Bass")],
+        )
+        self.assertEqual(profile.preset_for("pure-vocals").eq_id, 1)
+        self.assertEqual(profile.preset_for("deep-sea-bass").eq_id, 2)
+        self.assertTrue(profile.supports_custom)
+
 
 class EqSessionTests(unittest.TestCase):
     def session(self, product="062014"):

@@ -6,9 +6,10 @@ Compatibility describes evidence, not a promise that every firmware works.
 |---|---|---|---|
 | OnePlus Buds Pro | `060C14` | Verified | [Device record](oneplus-buds-pro.md) |
 | OnePlus Buds Pro 2 | `062014` | Verified | [Device record](oneplus-buds-pro-2.md) |
+| OnePlus Buds 4 | `065414` | Community Tested | [Device record](oneplus-buds-4.md) |
 | Other compatible OnePlus/OPO products | Unknown | Experimental if discovered | No maintainer verification |
 
-There are no community-tested models recorded yet. **Verified** means maintainer
+OnePlus Buds 4 is the first community-tested model. **Verified** means maintainer
 hardware testing on the two reference devices and their recorded firmware.
 **Community Tested** means a device owner has supplied reproducible evidence that
 the advertised functions work on that model. **Experimental** means recognised

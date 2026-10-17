@@ -7,7 +7,7 @@ from .bluez import Device
 from .lifecycle_trace import mark, span
 from .models import ControlResult, EqControlResult, EqStatusResult, EventBatch, SafeEvent, StatusResult
 from .timing import AncRequestError, PhaseTimer
-from .profiles import DeviceProfile, profile_for_product
+from .profiles import MAIN_ANC_MODES, DeviceProfile, profile_for_product
 from .protocol import (
     HELLO,
     NOTIFY_STATE,
@@ -199,8 +199,8 @@ class OpoSession:
                 # a fresh query is still the only success criterion.
                 acknowledgement = None
             timer.mark("set_response")
-            expected_mode = mode if mode in ("off", "transparency", "on") else "on"
-            expected_level = None if mode in ("off", "transparency", "on") else mode
+            expected_mode = mode if mode in MAIN_ANC_MODES else "on"
+            expected_level = None if mode in MAIN_ANC_MODES else mode
             # SET acknowledgement can precede physical application. A first
             # fresh query may legitimately return the previous mode. Re-query
             # on each response, bounded by both time and count; never replay SET.
@@ -474,6 +474,7 @@ class OpoSession:
                 name: switches[feature]
                 for feature, name in FEATURE_SWITCH_NAMES.items()
                 if feature in switches
+                and feature not in self.profile.unconfirmed_feature_switches
             }
             return SafeEvent("feature_switches", named)
         if frame.command == NOTIFY_STATE and frame.payload:

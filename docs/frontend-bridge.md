@@ -80,7 +80,7 @@ for units, nested totals, privacy scope, and the completed two-model hardware me
 Timing values do not imply successful verification; consumers must still check
 `ok` and `result.verified`.
 
-Main On/Off/Transparency requests now reuse the running controller's authenticated
+Main On/Off/Transparency/Adaptive requests now reuse the running controller's authenticated
 session and existing subscriptions. Success still requires a fresh, correlated
 state query. The result and matching snapshot are captured atomically, and no
 monitoring restoration blocks successful response delivery. Cold/legacy paths
