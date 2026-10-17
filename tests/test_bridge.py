@@ -97,6 +97,20 @@ class BridgeTests(unittest.TestCase):
         self.assertFalse(payload["eq_write_verified"])
         self.assertFalse(payload["custom_eq_write_verified"])
 
+    def test_community_tested_writes_require_explicit_hardware_evidence(self):
+        buds_4 = PROFILES["065414"]
+        self.assertEqual(buds_4.compatibility, "community_tested")
+        self.assertTrue(buds_4.community_writes_tested)
+        self.assertTrue(buds_4.verified)
+        status = replace(STATUS, product_id="065414", model="OnePlus Buds 4")
+        payload = serialize_snapshot(replace(SNAPSHOT, status=status))
+        self.assertEqual(payload["compatibility"], "community_tested")
+        self.assertIn("adaptive", payload["anc_modes"])
+        self.assertTrue(payload["eq_write_verified"])
+        self.assertTrue(payload["custom_eq_write_verified"])
+        experimental = replace(buds_4, compatibility="experimental")
+        self.assertFalse(experimental.verified)
+
     def test_callbacks_are_marshaled_through_dispatcher(self):
         emitted = []
         queued = []

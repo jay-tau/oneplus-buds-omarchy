@@ -15,8 +15,10 @@ hardware testing on the two reference devices and their recorded firmware.
 the advertised functions work on that model. **Experimental** means recognised
 protocol/service evidence without that device evidence. Community testing never
 upgrades a model to maintainer-verified status.
-Community Tested is an evidence label; write controls remain gated to
-maintainer-hardware-verified profiles.
+Community Tested is an evidence label. Write controls remain gated to
+maintainer-hardware-verified profiles, unless a community profile records that
+every exposed write was set and read back on the contributor's hardware
+(`community_writes_tested`). The Buds 4 profile is the only one that does.
 
 Current discovery requires a connected BlueZ device whose name contains
 `oneplus` or `oppo` and whose UUIDs contain one of the two known OPO services.

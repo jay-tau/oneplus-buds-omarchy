@@ -6,6 +6,9 @@
   matching HeyMelody's commands, the new Adaptive parent mode, and Buds 4
   factory EQ IDs (Serenade and Bass are swapped relative to the Pro 2).
   Feature switches whose shared names are unconfirmed on a model stay unnamed.
+- Allow writes on a Community Tested profile only when it records that every
+  exposed write was read back on the contributor's hardware; enabled for the
+  Buds 4.
 - Distinguish Verified, Community Tested and Experimental device evidence in the
   backend and panel; only Buds Pro and Buds Pro 2 remain hardware-verified.
 - Add a compact experimental-device notice and user-controlled compatibility

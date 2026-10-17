@@ -86,11 +86,16 @@ class DeviceProfile:
     compatibility: CompatibilityState
     # Feature IDs whose shared names are not confirmed on this model stay unnamed.
     unconfirmed_feature_switches: frozenset[int] = frozenset()
+    # A community-tested profile stays read-only unless every exposed write was
+    # set and read back on the contributor's hardware.
+    community_writes_tested: bool = False
 
     @property
     def verified(self) -> bool:
         """Keep hardware write gates explicit and backwards compatible."""
-        return self.compatibility == "verified"
+        return self.compatibility == "verified" or (
+            self.compatibility == "community_tested" and self.community_writes_tested
+        )
 
 
 PROFILES = {
@@ -193,6 +198,7 @@ PROFILES = {
         compatibility="community_tested",
         # HeyMelody showed Hi-Res on while 0x18 read off; 0x0b has no matching toggle.
         unconfirmed_feature_switches=frozenset({0x0B, 0x18}),
+        community_writes_tested=True,
     ),
 }
 
